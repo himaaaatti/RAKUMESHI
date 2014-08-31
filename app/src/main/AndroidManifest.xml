@@ -21,6 +21,8 @@
         </activity>
         <activity android:name=".SelectMenuActivity"/>
         <activity android:name=".PayListActivity"/>
+        <activity android:name=".SelectSecondMenuActivity"/>
+        <activity android:name=".DecideMenu"/>
 
 
     </application>
