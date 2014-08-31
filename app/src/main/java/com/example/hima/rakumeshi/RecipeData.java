@@ -1,11 +1,12 @@
 package com.example.hima.rakumeshi;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by hima on 14/09/01.
  */
-public class RecipeData {
+public class RecipeData implements Serializable{
 
     private String url;
     private String image_url;
