@@ -27,8 +27,68 @@ public class RecipeData implements Serializable{
         this.description = description;
         this.indication = indication;
         this.cost = cost;
+
+        material = new ArrayList<String>();
+        processes = new ArrayList<String>();
+
+//        Log.d("dbeug", url);
+        new AsyncTask<String, Document, Document>(){
+
+            @Override
+            protected Document doInBackground(String... strings) {
+                try {
+                    return Jsoup.connect(strings[0]).get();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(Document document){
+                Elements els = document.body().children();
+                Log.d("debug", els.toString());
+                for(int i=0; i<els.size(); i++){
+                    String tmp = els.get(i).select("p.stepMemo").toString();
+                    if(tmp.length() != 0) {
+                        processes.add(els.get(i).select("p.stepMemo").toString());
+
+
+                        Log.d("debug", tmp);
+
+                    }//                    Log.d("debug", String.valueOf(tmp.indexOf('>')));
+                }
+            }
+
+
+        }.execute(url);
+//        getProcess();
     }
 
+
+//    private void getProcess(){
+//
+//            try {
+//                Document doc = Jsoup.connect(url).get();
+//                Log.d("debug", doc.toString());
+//                Element element = doc.body();
+//                Elements els = element.children();
+//
+//
+//                for(int i=0; i <els.size();i++) {
+//                    String tmp = els.get(i).select("p.stepMemo").toString();
+//                    Log.d("debug", tmp);
+//                    Log.d("debug", String.valueOf(tmp.indexOf('>')));
+//                    processes.add(tmp);
+//                }
+//            } catch (IOException e) {
+//                // TODO Auto-generated catch block
+//                e.printStackTrace();
+//            }
+
+
+
+//   }
 
 
 }
