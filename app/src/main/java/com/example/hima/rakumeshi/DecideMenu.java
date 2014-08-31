@@ -3,6 +3,8 @@ package com.example.hima.rakumeshi;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.LinearLayout;
 
 import com.android.volley.Response;
 
@@ -19,6 +21,8 @@ public class DecideMenu extends Activity{
 
     private NetworkManager networkManager;
 //    private ArrayList<RecipeData> recipeData;
+
+    private LinearLayout linearLayout;
 
     @Override
     public void onCreate(Bundle bundle){
@@ -70,5 +74,14 @@ public class DecideMenu extends Activity{
     private void setRecipes(ArrayList<RecipeData> data){
         //TODO: get Image by asynctask, set Image and set Listener to dialog
         //      dynamic adding laytout
+
+        linearLayout = (LinearLayout)findViewById(R.id.top);
+        linearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NecesaryListDialog dialog = new NecesaryListDialog();
+                dialog.show(getFragmentManager(), "dialog");
+            }
+        });
     }
 }
