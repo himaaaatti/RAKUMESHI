@@ -11,16 +11,21 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 
 
-public class MyActivity extends Activity implements View.OnClickListener, RecognitionListener {
+public class MyActivity extends Activity implements RecognitionListener {
 
     SpeechRecognizer mSpeechRecognizer;
     String LOGTAG = "speechRecognizer";
+
+    private Intent intent;
+
+    TextView textView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -28,42 +33,36 @@ public class MyActivity extends Activity implements View.OnClickListener, Recogn
         setContentView(R.layout.activity_my);
 
 
-        // listener登録
-        (findViewById(R.id.button1)).setOnClickListener(this);
+        textView = (TextView) this.findViewById(R.id.input_text);
 
+        // listener登録
         mSpeechRecognizer = SpeechRecognizer.createSpeechRecognizer(this);
         mSpeechRecognizer.setRecognitionListener(this);
 
+        intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
+                RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+
+        intent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, getPackageName());
+
+        listening();
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.button1:
-                Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
-
-                intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
-                        RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
-
-                intent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE,
-                        getPackageName());
-
-                mSpeechRecognizer.startListening(intent);
-                break;
-            default:
-                break;
-        }
+    private void listening(){
+        mSpeechRecognizer.startListening(intent);
     }
 
     @Override
     public void onReadyForSpeech(Bundle params) {
-        Toast.makeText(this, "音声認識準備完了 入力", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "音声認識準備完了 入力してね", Toast.LENGTH_SHORT).show();
     }
 
     // 音声入力開始
     @Override
     public void onBeginningOfSpeech() {
-        Toast.makeText(this, "入力開始", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "入力開始", Toast.LENGTH_SHORT).show();
+        Log.v(LOGTAG,"onBeginningOfSpeech");
     }
 
     // 録音データのフィードバック用
@@ -87,6 +86,10 @@ public class MyActivity extends Activity implements View.OnClickListener, Recogn
     // ネットワークエラー又は、音声認識エラー
     @Override
     public void onError(int error) {
+        Log.e(LOGTAG, "onError");
+
+        listening();
+
         switch (error) {
             case SpeechRecognizer.ERROR_AUDIO:
                 // 音声データ保存失敗
@@ -142,11 +145,28 @@ public class MyActivity extends Activity implements View.OnClickListener, Recogn
 
         String getData = new String();
 
-        for (Object s : recData) {
-            getData += s + ",";
+        String next = "次";
+        String back = "戻る";
+
+        for (int i = 0; i < recData.size(); i++) {
+
+            if( ( (String) recData.get(i)).equals(next)) {
+                textView.setText(next);
+                Toast.makeText(this, next, Toast.LENGTH_SHORT).show();
+
+            } else if( ( (String) recData.get(i)).equals(back)) {
+                textView.setText(back);
+                Toast.makeText(this, back, Toast.LENGTH_SHORT).show();
+            }
+
         }
 
-        Toast.makeText(this, getData, Toast.LENGTH_SHORT).show();
+
+        //Toast.makeText(this, getData, Toast.LENGTH_SHORT).show();
+
+        Log.d("Input Text", (String)recData.get(0));
+
+        listening();
     }
 
 
