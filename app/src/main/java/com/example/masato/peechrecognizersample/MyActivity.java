@@ -12,7 +12,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -21,7 +20,7 @@ import java.util.ArrayList;
 public class MyActivity extends Activity implements View.OnClickListener, RecognitionListener {
 
     SpeechRecognizer mSpeechRecognizer;
-    String LOGTAG = "voice";
+    String LOGTAG = "speechRecognizer";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -30,7 +29,7 @@ public class MyActivity extends Activity implements View.OnClickListener, Recogn
 
 
         // listener登録
-        ((Button) findViewById(R.id.button1)).setOnClickListener(this);
+        (findViewById(R.id.button1)).setOnClickListener(this);
 
         mSpeechRecognizer = SpeechRecognizer.createSpeechRecognizer(this);
         mSpeechRecognizer.setRecognitionListener(this);
