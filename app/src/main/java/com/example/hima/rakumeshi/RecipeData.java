@@ -1,5 +1,15 @@
 package com.example.hima.rakumeshi;
 
+import android.os.AsyncTask;
+import android.util.Log;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -14,6 +24,7 @@ public class RecipeData implements Serializable{
     private String nic_name;
     private String description;
     private ArrayList<String> material;
+    private ArrayList<String> processes;
     private String indication;
     private String cost;
     int id;
@@ -47,11 +58,14 @@ public class RecipeData implements Serializable{
             @Override
             protected void onPostExecute(Document document){
                 Elements els = document.body().children();
-                Log.d("debug", els.toString());
+                Log.d("debug   " +
+                        "", els.toString());
                 for(int i=0; i<els.size(); i++){
                     String tmp = els.get(i).select("p.stepMemo").toString();
+//                    Log.d("debug", tmp);
                     if(tmp.length() != 0) {
-                        processes.add(els.get(i).select("p.stepMemo").toString());
+                        processes.add(tmp);
+//                        processes.add(els.get(i).select("p.stepMemo").toString());
 
 
                         Log.d("debug", tmp);
