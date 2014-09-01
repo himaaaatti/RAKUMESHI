@@ -16,22 +16,7 @@
 
 
         >
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/menu_image"
-            android:src="@drawable/ic_launcher"
-            android:layout_gravity="center_horizontal"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/menu_name"
-            android:text="this is text for menu"
-            />
-
+    <include layout="@layout/menu_panel"></include>
     </LinearLayout>
 
     <HorizontalScrollView

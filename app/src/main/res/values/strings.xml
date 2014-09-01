@@ -4,5 +4,10 @@
     <string name="app_name">RAKUMESHI</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="menu">メニューを決める</string>
+    <string name="buy_list">買い物リスト</string>
+    <string name="recomend">おまかせ</string>
+    <string name="meat">肉</string>
+    <string name="fish">魚</string>
 
 </resources>

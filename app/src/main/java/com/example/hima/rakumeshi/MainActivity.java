@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.android.volley.Response;
 
@@ -18,7 +19,7 @@ import org.json.JSONObject;
 public class MainActivity extends Activity {
 
 
-    private Button menu, pay;
+    private ImageButton menu, pay;
     private Context context;
 
     private NetworkManager networkManager;
@@ -29,7 +30,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         context = this;
 
-        menu = (Button)findViewById(R.id.menu_btn);
+        menu = (ImageButton)findViewById(R.id.menu_btn);
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,7 +39,7 @@ public class MainActivity extends Activity {
             }
         });
 
-        pay = (Button)findViewById(R.id.pay_btn);
+        pay = (ImageButton)findViewById(R.id.pay_btn);
         pay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
