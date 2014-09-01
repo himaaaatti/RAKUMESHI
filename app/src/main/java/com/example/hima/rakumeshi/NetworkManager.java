@@ -70,6 +70,7 @@ public class NetworkManager extends Volley {
 
     public void getMainDish(Listener<JSONObject> listener){
         get("Recipe/CategoryRanking/20121121", listener);
+
     }
 
     public void setParam(String key, String value){

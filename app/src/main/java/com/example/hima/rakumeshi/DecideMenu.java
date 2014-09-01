@@ -40,11 +40,12 @@ public class DecideMenu extends Activity{
             @Override
             public void onResponse(JSONObject jsonObject) {
                 ArrayList<RecipeData> recipeData = new ArrayList<RecipeData>();
-                Log.d("response", jsonObject.toString());
+//                Log.d("response", jsonObject.toString());
                 try {
                     JSONArray array = jsonObject.getJSONArray("result");
                     for(int i=0; i<array.length(); i++){
-                        Log.d("debug", array.get(i).toString());
+//                        Log.d("debug", array.get(i).toString());
+//                      for(int i=0; i==1; i++){
                         JSONObject recipe = array.getJSONObject(i);
                         String url = recipe.getString("recipeUrl");
                         String image_url = recipe.getString("foodImageUrl");
