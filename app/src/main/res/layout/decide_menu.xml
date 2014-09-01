@@ -16,14 +16,16 @@
 
 
         >
-    <include layout="@layout/menu_panel"></include>
-    </LinearLayout>
+    <include layout="@layout/menu_panel"
+        android:layout_weight="8"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"></include>
 
     <HorizontalScrollView
+        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:background="#555555"
-        android:layout_gravity="bottom"
         >
 
         <ImageView
@@ -33,7 +35,7 @@
             />
 
 
-
     </HorizontalScrollView>
 
+    </LinearLayout>
 </LinearLayout>

@@ -137,7 +137,7 @@ public class DecideMenu extends Activity{
 //        } catch (IOException e){
 //            e.printStackTrace();
 //        }
-        tvmenu.setText(data.get(0).url);
+        tvmenu.setText(data.get(0).title);
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
