@@ -8,9 +8,9 @@ import java.util.ArrayList;
  */
 public class RecipeData implements Serializable{
 
-    private String url;
-    private String image_url;
-    private String title;
+    public String url;
+    public  String image_url;
+    public String title;
     private String nic_name;
     private String description;
     private ArrayList<String> material;
@@ -20,14 +20,16 @@ public class RecipeData implements Serializable{
 
     public RecipeData(String url, String image_url, String title, String nic_name, String description, String indication, String cost)
     {
-        this.url = url;
+        /*this.url = url;
         this.image_url = image_url;
         this.title = title;
         this.nic_name = nic_name;
         this.description = description;
         this.indication = indication;
-        this.cost = cost;
+        this.cost = cost;*/
     }
+
+
 
 
 

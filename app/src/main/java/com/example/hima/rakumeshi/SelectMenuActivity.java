@@ -20,6 +20,14 @@ public class SelectMenuActivity extends Activity {
         setContentView(R.layout.select_menu_activity);
 
         recomend = (ImageButton)findViewById(R.id.recomend_btn);
+        recomend.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public  void onClick(View view){
+                Intent intent = new Intent(getApplicationContext(), DecideMenu.class);
+                intent.putExtra("categoryType","free");
+                startActivity(intent);
+            }
+        });
 
         beef = (ImageButton)findViewById(R.id.beef_btn);
         beef.setOnClickListener(new View.OnClickListener() {
@@ -31,6 +39,14 @@ public class SelectMenuActivity extends Activity {
         });
 
         fish = (ImageButton)findViewById(R.id.fish_btn);
+        fish.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public  void onClick(View view){
+                Intent intent = new Intent(getApplicationContext(), DecideMenu.class);
+                intent.putExtra("categoryType","11");
+                startActivity(intent);
+            }
+        });
 
     }
 }

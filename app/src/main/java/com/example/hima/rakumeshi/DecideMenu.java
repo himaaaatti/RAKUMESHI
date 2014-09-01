@@ -1,10 +1,14 @@
 package com.example.hima.rakumeshi;
 
 import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.android.volley.Response;
 
@@ -12,6 +16,11 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 
 /**
@@ -20,7 +29,7 @@ import java.util.ArrayList;
 public class DecideMenu extends Activity{
 
     private NetworkManager networkManager;
-//    private ArrayList<RecipeData> recipeData;
+    private ArrayList<RecipeData> recipeData;
 
     private LinearLayout linearLayout;
 
@@ -31,15 +40,16 @@ public class DecideMenu extends Activity{
 
         networkManager = new NetworkManager(getApplicationContext());
 
-//        recipeData = new ArrayList<RecipeData>();
+        recipeData = new ArrayList<RecipeData>();
 
         String categoryType = getIntent().getStringExtra("categoryType");
-
+        if(categoryType.equals("free")){
+            categoryType="30";
+        }
         networkManager.setParam("categoryType", categoryType);
         networkManager.getMainDish(new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject jsonObject) {
-                ArrayList<RecipeData> recipeData = new ArrayList<RecipeData>();
                 Log.d("response", jsonObject.toString());
                 try {
                     JSONArray array = jsonObject.getJSONArray("result");
@@ -61,6 +71,7 @@ public class DecideMenu extends Activity{
 
                     setRecipes(recipeData);
                 } catch (JSONException e) {
+                    Log.v("error","error");
                     e.printStackTrace();
                 }
 
@@ -70,12 +81,29 @@ public class DecideMenu extends Activity{
 
 
     }
+    private void selectRecipe(){
+
+    }
 
     private void setRecipes(ArrayList<RecipeData> data){
         //TODO: get Image by asynctask, set Image and set Listener to dialog
         //      dynamic adding laytout
 
         linearLayout = (LinearLayout)findViewById(R.id.top);
+        ImageView ivmenu = (ImageView)findViewById(R.id.menuImage);
+        TextView tvmenu = (TextView)findViewById(R.id.menuName);
+        try {
+            Log.v("error",recipeData.get(1).image_url);
+            URL url = new URL(URLEncoder.encode(recipeData.get(1).image_url,"utf-8"));
+            InputStream inputStream = url.openStream();
+            Bitmap b = android.graphics.BitmapFactory.decodeStream(inputStream);
+            ivmenu.setImageBitmap(b);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+        tvmenu.setText(recipeData.get(0).url);
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
