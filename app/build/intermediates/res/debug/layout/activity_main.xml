@@ -8,10 +8,34 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".MainActivity">
 
-    <TextView
-        android:text="@string/hello_world"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:id="@+id/linearLayout">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/menu_btn"
+            />
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pay_btn"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/recipe_btn"
+            />
+
+    </LinearLayout>
+
 
 </RelativeLayout>
-<!-- From: file:/home/hima/RAKUMESHI/app/src/main/res/layout/activity_main.xml -->
+<!-- From: file:/home/masato/AndroidStudioProjects/RAKUMESHI/app/src/main/res/layout/activity_main.xml -->

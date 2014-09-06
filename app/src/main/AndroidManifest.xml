@@ -23,6 +23,7 @@
         <activity android:name=".PayListActivity"/>
         <activity android:name=".SelectSecondMenuActivity"/>
         <activity android:name=".DecideMenu"/>
+        <activity android:name=".RecipeProcedureActivity"/>
 
 
     </application>

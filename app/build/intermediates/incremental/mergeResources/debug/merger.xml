@@ -2,40 +2,65 @@
 <merger version="2" >
 
     <dataSet config="main" >
-        <source path="/home/hima/RAKUMESHI/app/src/main/res" >
+        <source path="/home/masato/AndroidStudioProjects/RAKUMESHI/app/src/main/res" >
             <file
-                name="main"
-                path="/home/hima/RAKUMESHI/app/src/main/res/menu/main.xml"
-                qualifiers=""
-                type="menu" />
-            <file
-                path="/home/hima/RAKUMESHI/app/src/main/res/values-w820dp/dimens.xml"
+                path="/home/masato/AndroidStudioProjects/RAKUMESHI/app/src/main/res/values-w820dp/dimens.xml"
                 qualifiers="w820dp-v13" >
                 <dimen name="activity_horizontal_margin" >64dp
                 </dimen>
             </file>
             <file
                 name="ic_launcher"
-                path="/home/hima/RAKUMESHI/app/src/main/res/drawable-mdpi/ic_launcher.png"
-                qualifiers="mdpi-v4"
+                path="/home/masato/AndroidStudioProjects/RAKUMESHI/app/src/main/res/drawable-xhdpi/ic_launcher.png"
+                qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
                 name="ic_launcher"
-                path="/home/hima/RAKUMESHI/app/src/main/res/drawable-xxhdpi/ic_launcher.png"
+                path="/home/masato/AndroidStudioProjects/RAKUMESHI/app/src/main/res/drawable-xxhdpi/ic_launcher.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
+                name="ic_launcher"
+                path="/home/masato/AndroidStudioProjects/RAKUMESHI/app/src/main/res/drawable-hdpi/ic_launcher.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="necessary_list_dialog"
+                path="/home/masato/AndroidStudioProjects/RAKUMESHI/app/src/main/res/layout/necessary_list_dialog.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="select_menu_activity"
+                path="/home/masato/AndroidStudioProjects/RAKUMESHI/app/src/main/res/layout/select_menu_activity.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="decide_menu"
+                path="/home/masato/AndroidStudioProjects/RAKUMESHI/app/src/main/res/layout/decide_menu.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="select_second_menu_activity"
+                path="/home/masato/AndroidStudioProjects/RAKUMESHI/app/src/main/res/layout/select_second_menu_activity.xml"
+                qualifiers=""
+                type="layout" />
+            <file
                 name="activity_main"
-                path="/home/hima/RAKUMESHI/app/src/main/res/layout/activity_main.xml"
+                path="/home/masato/AndroidStudioProjects/RAKUMESHI/app/src/main/res/layout/activity_main.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="pay_list_activity"
+                path="/home/masato/AndroidStudioProjects/RAKUMESHI/app/src/main/res/layout/pay_list_activity.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="ic_launcher"
-                path="/home/hima/RAKUMESHI/app/src/main/res/drawable-hdpi/ic_launcher.png"
-                qualifiers="hdpi-v4"
+                path="/home/masato/AndroidStudioProjects/RAKUMESHI/app/src/main/res/drawable-mdpi/ic_launcher.png"
+                qualifiers="mdpi-v4"
                 type="drawable" />
             <file
-                path="/home/hima/RAKUMESHI/app/src/main/res/values/styles.xml"
+                path="/home/masato/AndroidStudioProjects/RAKUMESHI/app/src/main/res/values/styles.xml"
                 qualifiers="" >
 
                 <style
@@ -46,7 +71,7 @@
                 </style>
             </file>
             <file
-                path="/home/hima/RAKUMESHI/app/src/main/res/values/dimens.xml"
+                path="/home/masato/AndroidStudioProjects/RAKUMESHI/app/src/main/res/values/dimens.xml"
                 qualifiers="" >
                 <dimen name="activity_horizontal_margin" >16dp
                 </dimen>
@@ -54,7 +79,7 @@
                 </dimen>
             </file>
             <file
-                path="/home/hima/RAKUMESHI/app/src/main/res/values/strings.xml"
+                path="/home/masato/AndroidStudioProjects/RAKUMESHI/app/src/main/res/values/strings.xml"
                 qualifiers="" >
                 <string name="action_settings" >Settings
                 </string>
@@ -64,16 +89,36 @@
                 </string>
             </file>
             <file
-                name="ic_launcher"
-                path="/home/hima/RAKUMESHI/app/src/main/res/drawable-xhdpi/ic_launcher.png"
-                qualifiers="xhdpi-v4"
+                name="main"
+                path="/home/masato/AndroidStudioProjects/RAKUMESHI/app/src/main/res/menu/main.xml"
+                qualifiers=""
+                type="menu" />
+            <file
+                name="layer_card_background"
+                path="/home/masato/AndroidStudioProjects/RAKUMESHI/app/src/main/res/drawable-hdpi/layer_card_background.xml"
+                qualifiers="hdpi-v4"
                 type="drawable" />
+            <file
+                name="recipe_card_list"
+                path="/home/masato/AndroidStudioProjects/RAKUMESHI/app/src/main/res/layout/recipe_card_list.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="recipe_fragment"
+                path="/home/masato/AndroidStudioProjects/RAKUMESHI/app/src/main/res/layout/recipe_fragment.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="recipe_item_layout"
+                path="/home/masato/AndroidStudioProjects/RAKUMESHI/app/src/main/res/layout/recipe_item_layout.xml"
+                qualifiers=""
+                type="layout" />
         </source>
-        <source path="/home/hima/RAKUMESHI/app/build/generated/res/rs/debug" />
-        <source path="/home/hima/RAKUMESHI/app/build/generated/res/generated/debug" />
+        <source path="/home/masato/AndroidStudioProjects/RAKUMESHI/app/build/generated/res/rs/debug" />
+        <source path="/home/masato/AndroidStudioProjects/RAKUMESHI/app/build/generated/res/generated/debug" />
     </dataSet>
     <dataSet config="debug" >
-        <source path="/home/hima/RAKUMESHI/app/src/debug/res" />
+        <source path="/home/masato/AndroidStudioProjects/RAKUMESHI/app/src/debug/res" />
     </dataSet>
 
 </merger>

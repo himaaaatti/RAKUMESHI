@@ -4,6 +4,8 @@
     android:versionCode="1"
     android:versionName="1.0" >
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="20" />
@@ -22,6 +24,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.example.hima.rakumeshi.SelectMenuActivity" />
+        <activity android:name="com.example.hima.rakumeshi.PayListActivity" />
+        <activity android:name="com.example.hima.rakumeshi.SelectSecondMenuActivity" />
+        <activity android:name="com.example.hima.rakumeshi.DecideMenu" />
+        <activity android:name="com.example.hima.rakumeshi.RecipeProcedureActivity" />
     </application>
 
 </manifest>

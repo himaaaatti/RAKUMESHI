@@ -2,10 +2,10 @@
 <merger version="2" >
 
     <dataSet config="main" >
-        <source path="/home/hima/RAKUMESHI/app/src/main/assets" />
+        <source path="/home/masato/AndroidStudioProjects/RAKUMESHI/app/src/main/assets" />
     </dataSet>
     <dataSet config="debug" >
-        <source path="/home/hima/RAKUMESHI/app/src/debug/assets" />
+        <source path="/home/masato/AndroidStudioProjects/RAKUMESHI/app/src/debug/assets" />
     </dataSet>
 
 </merger>
