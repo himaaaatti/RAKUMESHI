@@ -20,15 +20,8 @@ public class RecipeProcedure  extends AsyncTask<Void, Void, String[]> {
         this.url = url;
     }
 
-    public String[] getRecipeProcedure() {
-        return recipes;
-    }
-
     @Override
     protected String[] doInBackground(Void ... Void) {
-        // httpリクエスト投げる処理を書く。
-        // ちなみに私はHttpClientを使って書きましたー
-
 
         try {
             Document document = Jsoup.connect(url).get();
@@ -47,13 +40,6 @@ public class RecipeProcedure  extends AsyncTask<Void, Void, String[]> {
         }
 
         return recipes;
-    }
-
-
-    synchronized protected void onPostExecute(String[] recipes) {
-
-        Log.d("recipessssss", recipes[1]);
-
     }
 
 }

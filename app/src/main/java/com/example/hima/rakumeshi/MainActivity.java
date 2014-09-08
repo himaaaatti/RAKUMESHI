@@ -51,17 +51,13 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View view) {
 
-              /*  String[] strings = new String[] {
-                        "日曜日\n", "月曜日\n", "火曜日\n", "水曜日\n", "木曜日\n", "金曜日\n", "土曜日\n"
-                };
-*/
                 RecipeProcedure recipeProcedure = new RecipeProcedure("http://recipe.rakuten.co.jp/recipe/1370004549/");
                 recipeProcedure.execute();
 
 
                 try {
                     String[] recipes = recipeProcedure.get();
-                    Log.d("recipe",recipes[1]);
+                    //Log.d("recipe",recipes[1]);
 
                     Intent intent = new Intent(context, RecipeProcedureActivity.class);
                     intent.putExtra("recipeData", recipes);
