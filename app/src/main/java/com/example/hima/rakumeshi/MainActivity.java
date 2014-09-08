@@ -1,23 +1,12 @@
 package com.example.hima.rakumeshi;
 
 import android.app.Activity;
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-
-import com.android.volley.Response;
-
-import org.json.JSONObject;
-
-import java.util.ArrayList;
 
 
 public class MainActivity extends Activity {
@@ -62,14 +51,27 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View view) {
 
-                String[] strings = new String[] {
+              /*  String[] strings = new String[] {
                         "日曜日\n", "月曜日\n", "火曜日\n", "水曜日\n", "木曜日\n", "金曜日\n", "土曜日\n"
                 };
+*/
+                RecipeProcedure recipeProcedure = new RecipeProcedure("http://recipe.rakuten.co.jp/recipe/1370004549/");
+                recipeProcedure.execute();
 
-                Intent intent = new Intent(context, RecipeProcedureActivity.class);
-                intent.putExtra("recipeData", strings);
 
-                startActivity(intent);
+                try {
+                    String[] recipes = recipeProcedure.get();
+                    Log.d("recipe",recipes[1]);
+
+                    Intent intent = new Intent(context, RecipeProcedureActivity.class);
+                    intent.putExtra("recipeData", recipes);
+
+                    startActivity(intent);
+
+                } catch (Exception e) {
+
+                }
+
             }
         });
 

@@ -207,7 +207,7 @@ public class RecipeListFragment extends ListFragment implements RecognitionListe
         listening();
     }
 
-    @Override
+ /*   @Override
     public void onDestroy() {
         //kill the voice recognizer
         if(mSpeechRecognizer != null){
@@ -215,6 +215,6 @@ public class RecipeListFragment extends ListFragment implements RecognitionListe
             mSpeechRecognizer = null;
         }
         super.onDestroy();
-    }
+    }*/
 
 }

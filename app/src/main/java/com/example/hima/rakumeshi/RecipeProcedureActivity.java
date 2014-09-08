@@ -20,7 +20,9 @@ public class RecipeProcedureActivity extends Activity {
         setContentView(R.layout.recipe_fragment);
 
         Intent intent = getIntent();
+
         String[] data = (String[])intent.getSerializableExtra("recipeData");
+
 
         FragmentManager manager = getFragmentManager();
 
