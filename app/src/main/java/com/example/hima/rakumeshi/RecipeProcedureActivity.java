@@ -23,7 +23,6 @@ public class RecipeProcedureActivity extends Activity {
 
         String[] data = (String[])intent.getSerializableExtra("recipeData");
 
-
         FragmentManager manager = getFragmentManager();
 
         FragmentTransaction transaction = manager.beginTransaction();

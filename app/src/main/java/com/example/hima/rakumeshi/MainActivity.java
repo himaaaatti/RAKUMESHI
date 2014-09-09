@@ -51,9 +51,10 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View view) {
 
-                RecipeProcedure recipeProcedure = new RecipeProcedure("http://recipe.rakuten.co.jp/recipe/1370004549/");
-                recipeProcedure.execute();
+                String url = "http://recipe.rakuten.co.jp/recipe/1370004549/";
 
+                RecipeProcedure recipeProcedure = new RecipeProcedure(url);
+                recipeProcedure.execute();
 
                 try {
                     String[] recipes = recipeProcedure.get();
