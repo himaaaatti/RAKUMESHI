@@ -47,6 +47,10 @@ public class RecipeProcedure  extends AsyncTask<Void, Void, String[]> {
 
         recipes = recipe.split("\\d ");
 
+        for (int i = 1; i < recipes.length; i++) {
+            recipes[i] = i + "\n" + recipes[i];
+        }
+
         return recipes;
     }
 
@@ -61,10 +65,10 @@ public class RecipeProcedure  extends AsyncTask<Void, Void, String[]> {
         String material = doc.substring(start, end);
         String[] materialArray = material.split(" ");
 
-        String materialStr = materialArray[0] + "\n";
+        String materialStr = materialArray[0];
 
         for (int i = 2; i < materialArray.length; i+=2) {
-            materialStr += materialArray[i - 1] + " " + materialArray[i - 0] + "\n";
+            materialStr += "\n" + materialArray[i - 1] + " " + materialArray[i];
         }
 
         return materialStr;
